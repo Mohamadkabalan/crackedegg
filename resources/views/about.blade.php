@@ -44,7 +44,7 @@
 @include('partials.hero-area',['title' => 'About Us'])
 <!--===== HERO AREA ENDS =======-->
 @include('partials.about')
-@include('partials.clients')
+
 <!--===== WORK AREA STARTS =======-->
 <div class="works-inner-section-area sp1">
     <div class="container">
