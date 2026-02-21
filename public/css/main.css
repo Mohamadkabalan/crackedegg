@@ -1819,6 +1819,14 @@ Location:
 .header-elements .site-logo img , .mobile-header-elements .mobile-logo img{
     max-height:64px;
 }
+.tabs-area .nav .nav-item .nav-link{
+    color : #ffc107;
+    background-color: #ffffff;
+}
+.tabs-area .nav .nav-item .nav-link.active{
+    color : #ffffff;
+    background-color: #ffc107;
+}
 .header-btn1 {
   display: inline-block;
   font-family: var(--ztc-family-font1);

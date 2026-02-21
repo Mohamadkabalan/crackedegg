@@ -16,7 +16,7 @@ class ContactController extends Controller{
           'message'    => ['required', 'string', 'max:5000'],
         ]);
 
-        Mail::to('info@cracked.studio')->send(new ContactFormMail($data));
+        Mail::to('info@crackedegg.studio')->send(new ContactFormMail($data));
 
         return back()->with('success', 'Thanks! We received your message and will get back to you shortly.');
     }

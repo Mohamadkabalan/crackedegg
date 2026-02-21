@@ -86,7 +86,7 @@
                                     <button class="header-btn1">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></button>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 pt-5">
                                 @if (session('success'))
                                     <div class="alert alert-success">{{ session('success') }}</div>
                                 @endif
