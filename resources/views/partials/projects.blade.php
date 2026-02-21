@@ -16,7 +16,7 @@
 
                     @foreach($projects as $project)
                     <div class="cs_case_study cs_style_1 cs_hover_active active" data-aos="fade-up" data-aos-duration="800">
-                        <a href="{{ route('project.show', $project->slug) }}" class="cs_case_study_thumb cs_bg_filed" data-src="{{ asset('storage/'.$project->featured_image) }}"></a>
+                        <a href="{{ route('project.show', $project->slug) }}" class="cs_case_study_thumb cs_bg_filed" data-src="{{ asset('storage/'.$project->featured_image) }}" style="background-image: url({{asset('storage/'.$project->featured_image)}});" ></a>
                         <div class="content-area1">
                             <a href="{{ route('project.show', $project->slug) }}" class="head">{{$project->title}}</a>
                         </div>
