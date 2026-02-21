@@ -9,17 +9,21 @@ use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
 {
-    public function index(Request $request,
-      ProjectRepository $projects
+    public function index(Request $request
     ) {
         $categoryId = $request->integer('category');
-        $categories=Category::all();
+
+        $categories = Category::query()
+          ->with(['projects' => function ($q) {
+              $q->where('is_published', 1)
+                ->latest();
+          }])
+          ->get();
+
         return view('projects', [
-          'categories' =>  $categories,
-          'projects'   => $projects->paginate($categoryId, perPage: 9),
+          'categories' => $categories,
           'activeCategoryId' => $categoryId,
         ]);
-
     }
     public function show(Project $project)
     {

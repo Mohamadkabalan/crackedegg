@@ -61,10 +61,6 @@
                 <div class="tabs-area text-center">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                    {{--        <a class="nav-link {{ empty($activeCategoryId) ? 'active' : '' }}"
-                               href="{{ route('projects.index') }}">
-                                All
-                            </a>--}}
                             <button class="nav-link active" id="pills-email-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                                     aria-selected="false">All
@@ -73,13 +69,9 @@
 
                         @foreach($categories as $category)
                             <li class="nav-item" role="presentation">
-                        {{--        <a class="nav-link {{ (int)$activeCategoryId === (int)$category->id ? 'active' : '' }}"
-                                   href="{{ route('projects.index', ['category' => $category->id]) }}">
-                                    {{ $category->name }}
-                                </a>--}}
-                                <button class="nav-link" id="pills-{{$category->id}}-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-{{ $category->name }}" type="button" role="tab"
-                                        aria-controls="pills-{{ $category->name }}" aria-selected="false">{{ $category->name }}
+                                <button class="nav-link" id="pills-{{$category->slug}}-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-{{ $category->slug }}" type="button" role="tab"
+                                        aria-controls="pills-{{ $category->slug }}" aria-selected="false">{{ $category->name }}
                                 </button>
                             </li>
                         @endforeach
@@ -92,7 +84,46 @@
                         <div class="tab-pane fade active show" id="pills-home" role="tabpanel"  >
                             <div class="tabs-contents">
                                 <div class="row align-items-center">
-                                    @forelse($projects as $project)
+                                    @foreach($categories as $category)
+                                        @foreach($category->projects as $project)
+                                            <div class="col-lg-4">
+                                                <div class="case-inner-box">
+                                                    <div class="img1 image-anime">
+                                                        <img
+                                                                src="{{ $project->featured_image ? asset('storage/'.$project->featured_image) : asset('img/placeholder.png') }}"
+                                                                alt="{{ $project->title }}"
+                                                        >
+                                                    </div>
+
+                                                    <div class="content-area">
+                                                        <div class="link-area">
+                                                            <a href="{{ route('projects.index', ['category' => $project->category_id]) }}" class="tags">
+                                                                #{{ $project->category?->name }}
+                                                            </a>
+
+                                                            <a href="{{ route('project.show', $project->slug) }}" class="head">
+                                                                {{ $project->title }}
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="arrow">
+                                                            <a href="{{ route('project.show', $project->slug) }}">
+                                                                <i class="fa-solid fa-arrow-right"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        @foreach($categories as $category)
+                        <div class="tab-pane fade" id="pills-{{$category->slug}}" role="tabpanel"  >
+                            <div class="tabs-contents">
+                                <div class="row align-items-center">
+                                    @foreach($category->projects as $project)
                                         <div class="col-lg-4">
                                             <div class="case-inner-box">
                                                 <div class="img1 image-anime">
@@ -121,25 +152,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @empty
-                                        <div class="col-12 text-center">
-                                            <p>No projects found.</p>
-                                        </div>
-                                    @endforelse
+                                    @endforeach
                                 </div>
                             </div>
-
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
+{{--            <div class="col-lg-12">
                 <div class="pagination-area">
                         <div class="d-flex justify-content-center">
                             {{ $projects->links('partials.pagination') }}
                         </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </div>
 </div>
