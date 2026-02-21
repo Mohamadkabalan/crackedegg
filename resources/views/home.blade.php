@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/plugins/sidebar.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/plugins/slick-slider.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/plugins/nice-select.css')  }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}?v={{ filemtime(public_path('css/main.css')) }}">
 
     <!--=====  JS SCRIPT LINK =======-->
     <script src="{{ asset('js/plugins/jquery-3-6-0.min.js') }}"></script>
