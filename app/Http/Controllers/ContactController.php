@@ -15,9 +15,20 @@ class ContactController extends Controller{
           'phone'      => ['required', 'string', 'max:50'],
           'message'    => ['required', 'string', 'max:5000'],
         ]);
-
+        try {
         Mail::to('info@crackedegg.studio')->send(new ContactFormMail($data));
+            return response()->json([
+              'ok' => true,
+              'message' => 'Thanks! Your message has been sent.',
+            ]);
+        } catch (Throwable $e) {
+            report($e);
 
-        return back()->with('success', 'Thanks! We received your message and will get back to you shortly.');
+            return response()->json([
+              'ok' => false,
+              'message' => 'Sorry, we could not send your message right now. Please try again later.',
+            ], 500);
+        }
+
     }
 }

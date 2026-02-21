@@ -32,7 +32,7 @@
                     <h3>Get in touch</h3>
                     <ul>
                         <li><a href="mailto"><img src="{{ asset('img/icons/email.svg') }}" alt=""><span>info@crackedegg.studio</span></a></li>
-                        <li><a href="#"><img src="{{ asset('img/icons/location.svg') }}" alt=""><span>8708 Technology Forest <br class="d-lg-block d-none"> Pl Suite 125 -G, The <br class="d-lg-block d-none"> Woodlands, TX 773</span></a></li>
+                        <li><a href="#"><img src="{{ asset('img/icons/location.svg') }}" alt=""><span>Rasmaska, Koura<br class="d-lg-block d-none">North Lebanon</span></a></li>
                         <li><span href="tel:+961-70785152"><img src="{{ asset('img/icons/phone.svg') }}" alt="">+961-70785152</span></li>
                     </ul>
                 </div>

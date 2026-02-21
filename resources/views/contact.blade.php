@@ -94,8 +94,9 @@
             </div>
             <div class="col-lg-1"></div>
             <div class="col-lg-5">
-                <form action="{{ route('contact.send')  }}" method="POST">
+                <form action="{{ route('contact.send')  }}" method="POST" id="contactForm">
                     @csrf
+                <div id="formAlert" class="alert mt-3" style="display:none;"></div>
                 <div class="contact-form-area">
                     <h4>Get In Touch</h4>
                     <div class="row">
@@ -128,23 +129,8 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <button type="submit" class="header-btn1">Get In Touch <span><i class="fa-solid fa-arrow-right"></i></span></button>
+                                <button type="submit" class="header-btn1" id="contactSubmitBtn">Get In Touch <span><i class="fa-solid fa-arrow-right"></i></span></button>
                             </div>
-                        </div>
-                        <div class="col-lg-12 pt-5">
-                            @if (session('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
-                            @endif
-
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul class="mb-0">
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
                         </div>
                     </div>
                 </div>
@@ -176,6 +162,6 @@
 <script src="{{ asset('js/plugins/slick-slider.js') }}"></script>
 <script src="{{ asset('js/plugins/circle-progress.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-
+<script src="{{ asset('js/contact.js') }}"></script>
 </body>
 </html>

@@ -51,8 +51,9 @@
                 <div class="contact-boxarea">
                     <h3>Get In Touch</h3>
                     <p>We're here to help! If you have any questions or would like to discuss <br class="d-lg-block d-none"> how our SEO and digital marketing services can benefit your business,</p>
-                    <form action="{{ route('contact.send')  }}" method="POST">
+                    <form action="{{ route('contact.send')  }}" method="POST" id="contactForm">
                         @csrf
+                        <div id="formAlert" class="alert mt-3" style="display:none;"></div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="input-area">
@@ -83,23 +84,8 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="input-area">
-                                    <button class="header-btn1">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></button>
+                                    <button class="header-btn1" id="contactSubmitBtn">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></button>
                                 </div>
-                            </div>
-                            <div class="col-lg-12 pt-5">
-                                @if (session('success'))
-                                    <div class="alert alert-success">{{ session('success') }}</div>
-                                @endif
-
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul class="mb-0">
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
                             </div>
                         </div>
                     </form>
@@ -108,3 +94,4 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/contact.js') }}"></script>
