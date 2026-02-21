@@ -1816,7 +1816,7 @@ Location:
   font-weight: 400;
   line-height: 150%;
 }
-.header-elements .site-logo img{
+.header-elements .site-logo img , .mobile-header-elements .mobile-logo img{
     max-height:64px;
 }
 .header-btn1 {
