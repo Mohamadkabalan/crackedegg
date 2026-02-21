@@ -6,10 +6,11 @@
                     <img src="{{ asset('img/logo/logo1.png') }}" alt="">
                     <p>By optimizing content, leveraging relevant keywords, and adhering to best practices, businesses can secure prominent position (SEO)</p>
                     <ul>
-                        <li><a href="#"><img src="{{ asset('img/icons/facebook.svg')  }}" alt=""></a></li>
-                        <li><a href="#"><img src="{{ asset('img/icons/instagram.svg') }}" alt=""></a></li>
-                        <li><a href="#"><img src="{{ asset('img/icons/linkedin.svg') }}" alt=""></a></li>
-                        <li><a href="#"><img src="{{ asset('img/icons/youtube.svg') }}" alt=""></a></li>
+                        <li><a href="https://www.tiktok.com/@crackedegg.studio"><img src="{{ asset('img/icons/tiktok.svg')  }}" alt=""></a></li>
+                        <li><a href="https://www.facebook.com/crackedegg.studio"><img src="{{ asset('img/icons/facebook.svg')  }}" alt=""></a></li>
+                        <li><a href="https://www.instagram.com/crackedegg.studio"><img src="{{ asset('img/icons/instagram.svg') }}" alt=""></a></li>
+                        <li><a href="https://www.linkedin.com/company/crackedegg-studio"><img src="{{ asset('img/icons/linkedin.svg') }}" alt=""></a></li>
+                        <li><a href="https://www.youtube.com/@CrackedEgg.Studio"><img src="{{ asset('img/icons/youtube.svg') }}" alt=""></a></li>
                     </ul>
                 </div>
             </div>

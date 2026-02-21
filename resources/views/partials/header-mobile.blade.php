@@ -71,10 +71,11 @@
 
                         <div class="social-links-mobile-menu">
                             <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a href="https://www.tiktok.com/@crackedegg.studio"><i class="fa-brands fa-tiktok"></i></a></li>
+                                <li><a href="https://www.facebook.com/crackedegg.studio"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/crackedegg.studio"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/crackedegg-studio"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.youtube.com/@CrackedEgg.Studio"><i class="fa-brands fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
