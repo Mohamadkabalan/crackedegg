@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/plugins/bootstrap.min.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/plugins/fontawesome.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/plugins/magnific-popup.css')  }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/mobile.css')  }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/mobile.css') }}?v={{ filemtime(public_path('css/plugins/mobile.css')) }}">
     <link rel="stylesheet" href="{{ asset('css/plugins/owlcarousel.min.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/plugins/sidebar.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/plugins/slick-slider.css')  }}">
