@@ -10,7 +10,7 @@ Route::get('/about', function () {
 Route::get('/projects', [\App\Http\Controllers\ProjectsController::class,'index'])->name('projects.index');
 Route::get('/projects/{project:slug}', [\App\Http\Controllers\ProjectsController::class, 'show'])->name('project.show');
 
-
+Route::post('/contact/send', [\App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
 Route::get('/contact', function () {
     return view('contact');
 });

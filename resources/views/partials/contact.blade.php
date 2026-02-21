@@ -6,7 +6,7 @@
                     <img src="{{ asset('img/elements/star2.png') }}" alt="" class="star2 keyframe5">
                     <img src="{{ asset('img/elements/star2.png') }}" alt="" class="star3 keyframe5">
                     <h2 class="text-anime-style-3">Get In Touch With Us Today</h2>
-                    <p>We're here to help! If you have any questions or would like to discuss <br class="d-md-block d-none"> how our SEO and digital marketing services can benefit your business,</p>
+                    <p>1We're here to help! If you have any questions or would like to discuss <br class="d-md-block d-none"> how our SEO and digital marketing services can benefit your business,</p>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="content">
                             <h4>Our Location</h4>
-                            <a href="#">8708 Technology Forest Pl Suite <br class="d-lg-block d-none"> 125 -G, The Woodlands, TX 773</a>
+                            <a href="#">1300, Rasmaska,  Koura   <br class="d-lg-block d-none"> North Lebanon</a>
                         </div>
                     </div>
                     <div class="space40"></div>
@@ -51,50 +51,55 @@
                 <div class="contact-boxarea">
                     <h3>Get In Touch</h3>
                     <p>We're here to help! If you have any questions or would like to discuss <br class="d-lg-block d-none"> how our SEO and digital marketing services can benefit your business,</p>
-                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <form action="{{ route('contact.send')  }}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="input-area">
-                                    <input type="text" placeholder="First Name" required>
+                                    <input type="text" placeholder="First Name" name="first_name" value="{{ old('first_name') }}" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="input-area">
-                                    <input type="text" placeholder="Last Name" required>
+                                    <input type="text" placeholder="Last Name" name="last_name" value="{{ old('last_name') }}"  required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="input-area">
-                                    <input type="email" placeholder="Email Address" required>
+                                    <input type="email" placeholder="Email Address" name="email" value="{{ old('email') }}" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="input-area">
-                                    <input type="number" placeholder="Phone Number" required>
+                                    <input type="number" placeholder="Phone Number" name="phone" value="{{ old('phone') }}" required>
                                 </div>
                             </div>
+
                             <div class="col-lg-12">
                                 <div class="input-area">
-                                    <select name="country" id="country" class="country-area nice-select6">
-                                        <option value="1" data-display="Service Type">Service Type</option>
-                                        <option value="">Belgium</option>
-                                        <option value="">Brezil</option>
-                                        <option value="">Argentina</option>
-                                        <option value="">Bangladesh</option>
-                                        <option value="">Germany</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="input-area">
-                                    <textarea placeholder="Your Message" required></textarea>
+                                    <textarea placeholder="Your Message" name="message" value="{{ old('message') }}" required></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="input-area">
                                     <button class="header-btn1">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></button>
                                 </div>
+                            </div>
+                            <div class="col-lg-12">
+                                @if (session('success'))
+                                    <div class="alert alert-success">{{ session('success') }}</div>
+                                @endif
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul class="mb-0">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </form>
