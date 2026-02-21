@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactFormMail;
-
+use App\Models\Contact;
 class ContactController extends Controller{
     public function send(Request $request)
     {
@@ -14,6 +14,10 @@ class ContactController extends Controller{
           'email'      => ['required', 'email', 'max:255'],
           'phone'      => ['required', 'string', 'max:50'],
           'message'    => ['required', 'string', 'max:5000'],
+        ]);
+        $contact = Contact::create([
+          ...$data,
+          'status' => 'pending',
         ]);
         try {
         Mail::to('info@crackedegg.studio')->send(new ContactFormMail($data));
