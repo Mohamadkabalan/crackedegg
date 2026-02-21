@@ -32,7 +32,9 @@ ul, li{
     list-style: none;
 }
 
-
+.mobile-header-elements .mobile-logo img{
+    max-height:64px;
+}
 
 
 /*Menu Css*/
