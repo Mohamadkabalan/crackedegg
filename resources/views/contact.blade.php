@@ -94,34 +94,36 @@
             </div>
             <div class="col-lg-1"></div>
             <div class="col-lg-5">
+                <form action="{{ route('contact.send')  }}" method="POST">
+                    @csrf
                 <div class="contact-form-area">
                     <h4>Get In Touch</h4>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <input type="text" placeholder="First Name">
+                                <input type="text" placeholder="First Name" name="first_name" value="{{ old('first_name') }}" required>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <input type="text" placeholder="Last Name">
+                                <input type="text" placeholder="Last Name" name="last_name" value="{{ old('last_name') }}" required>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <input type="email" placeholder="Email Address">
+                                <input type="email" placeholder="Email Address" name="email" value="{{ old('email') }}" required>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <input type="number" placeholder="Phone Number">
+                                <input type="number" placeholder="Phone Number" name="phone" value="{{ old('phone') }}" required>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <textarea placeholder="Your Message"></textarea>
+                                <textarea placeholder="Your Message" name="message" value="{{ old('message') }}" required></textarea>
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -129,8 +131,25 @@
                                 <button type="submit" class="header-btn1">Get In Touch <span><i class="fa-solid fa-arrow-right"></i></span></button>
                             </div>
                         </div>
+                        <div class="col-lg-12 pt-5">
+                            @if (session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul class="mb-0">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
+
+                </form>
             </div>
         </div>
     </div>
